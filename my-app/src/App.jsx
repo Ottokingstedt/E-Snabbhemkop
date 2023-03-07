@@ -24,7 +24,10 @@ import Order from './components/Details/Order';
 import Search from './components/Search';
 import SearchResults from './components/Details/SearchDetail';
 
+
 function App(){
+
+  
   return (
 <>
 <BrowserRouter basename="/">

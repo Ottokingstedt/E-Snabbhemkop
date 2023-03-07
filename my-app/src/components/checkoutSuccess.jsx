@@ -3,6 +3,8 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+import { ArrowLeftIcon } from '@heroicons/react/24/solid';
 import { clearCart, getTotals } from "../features/cartSlice";
 
 const CheckoutSuccess = () => {
@@ -20,7 +22,10 @@ const CheckoutSuccess = () => {
   return (
     <Container>
       <h2>Checkout Successful</h2>
-      
+      <Link to="/">
+                    <ArrowLeftIcon className='w-25 p-3"' />
+                    <span>Continue Shopping</span>
+      </Link>
     </Container>
   );
 };

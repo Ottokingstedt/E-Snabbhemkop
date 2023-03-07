@@ -1,10 +1,12 @@
-import {MapPinIcon, ShoppingCartIcon, MagnifyingGlassIcon, HeartIcon, BellIcon } from '@heroicons/react/24/solid'
-import {Link, NavLink, useNavigate} from 'react-router-dom';
+import {MapPinIcon, ShoppingCartIcon, HeartIcon, BellIcon } from '@heroicons/react/24/solid'
+import {Link, NavLink} from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from "styled-components"
 import { logoutUser } from '../features/authSlice';
 import { toast } from 'react-toastify';
 import Search from './Search';
+import DarkMode from './DarkMode';
+import GetLocal from './GetLocal';
 
 
 const Header = () => {
@@ -17,17 +19,18 @@ const Header = () => {
   return (
     <nav>
     <header className='header-top-strip'>
-        <div className="container-xxl subheader">
+        <div className="container">
             <div className="row">
-            <div className="col-6">
-                <p className="text-start mb-3 mt-3">
+            <div className="col-9">
+                <p className="col-3 mb-3 mt-3">
                 Welcome to E-snabbhemköp
                 </p>
                 </div>
-                <div className="col-6">
-                <p className="text-end mb-3 mt-3">
-                <MapPinIcon className='Iconsize'/>Deliver to 4131231
-                </p>
+                <div className="col-3">
+                <div className="text-end mb-3 mt-3 d-flex ">
+                <MapPinIcon className='Iconsize'/>
+                <GetLocal/>
+                </div>
                 </div>
             </div>
         </div>
@@ -44,24 +47,24 @@ const Header = () => {
                     <Search/>
                 </div> 
                 <div className="col-3 button-group-text">
-                    <div className="header-upper-links d-flex align-items-center justify-content-between">
+                    <div className="d-flex align-items-center justify-content-between">
                         <div className='mx-1'>
                             <button className='d-flex align-items-center gap-10'>
                                 <NavLink to="/cart">
                                     <ShoppingCartIcon className='Iconsize d-flex' />
                                     {/* <p className='d-flex justify-content gap-10'>shopping</p> */}
                                 </NavLink>
-                                <div className='d-flex flex-column gap-10'>
-                                    <span className='badge bg-warning text-dark'>{cartTotalQuantity}</span>
+                                <div className='d-flex flex-column'>
+                                    <span className='badge bg-warning text-dark ml-18'>{cartTotalQuantity}</span>
                                 </div>
                             </button>
                         </div>
-                        <div className='mx-1'>
+                        <div className='mx-2'>
                         <Link>
                         <HeartIcon className='Iconsize'/>
                         </Link>
                         </div>
-                        <div className='mx-1'>
+                        <div className='mx-2'>
                         <Link className='d-flex align-items-center gap-10'>
                             <BellIcon className='Iconsize'/>
                             {/* <div className='d-flex flex-column'>
@@ -90,6 +93,9 @@ const Header = () => {
                             <Link to="/register">Register</Link>
                             </AuthLinks> 
                         )}
+                        <div className='mx-5'>
+                        <DarkMode />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -133,13 +139,11 @@ const Header = () => {
                                 </ul>
                             </div>
                         </div>
-                        <div className="menu-links">
-                            <div className='d-flex align-items-center gap-15'>
+                            <div className='d-flex align-items-center gap-15 '>
                                 <NavLink to="/">Home</NavLink>
                                 <NavLink to="/blog">Blog</NavLink>
                                 <NavLink to="/faq">FQA</NavLink>
                                 <NavLink to="/contact">Contact</NavLink>
-                            </div>
                         </div>
                     </div>
                 </div>

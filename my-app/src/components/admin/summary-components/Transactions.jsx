@@ -34,7 +34,7 @@ return (
             {
                 orders?.map((order, index) => <Transaction key={index}>
                     <p>{order.shipping.name}</p>
-                    <p>${(order.total/100).toLocaleString()}</p>
+                    <p>{(order.total/100).toLocaleString()} KR</p>
                     <p>{moment(order.createdAt).fromNow()}</p>
 
                 </Transaction>)

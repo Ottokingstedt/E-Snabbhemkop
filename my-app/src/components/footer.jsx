@@ -1,6 +1,7 @@
-import React from 'react'
 import {Link} from 'react-router-dom';
 import {BsLinkedin, BsGithub, BsYoutube, BsInstagram} from 'react-icons/bs';
+import SubscribeForm from './SubscribeForm';
+
 const footer = () => {
   return (
 <>
@@ -8,6 +9,8 @@ const footer = () => {
     <div className="container-xxl">
         <div className="row align-items-center">
             <div className="col-5">
+
+                {/* Subscribe form */}
                 <div className="footer-top-data d-flex gap-30 align-items-center">
                     <img src="images/snabbhemköp-white.png" alt="newsletter" className='logo-E'/>
                     <h4 className='mb-0 text-white'>Sign Up for Newsletter</h4>
@@ -15,18 +18,7 @@ const footer = () => {
                 </div>
             </div>
             <div className="col-7">
-            <div className="input-group input-control">
-                        <input 
-                        type="text" 
-                        className='form-control py-1'
-                        placeholder="Your Email Address"
-                        aria-label="Your Email Address"
-                        aria-describedby='basic-addon2'
-                        />
-                        <span className='input-group-text py-3' id='basic-addon2'>
-                            Subscribe
-                        </span>
-                    </div>
+            <SubscribeForm/>
             </div>
         </div>
     </div>

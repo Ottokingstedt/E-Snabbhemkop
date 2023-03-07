@@ -121,7 +121,6 @@ const Summary = () => {
     <Overview>
       <Title>
         <h2>Overview</h2>
-        <p>How your shop is performing compared to the previous month</p>
       </Title>
       <WidgetWrapper>
     {data?.map((data, index) => <Widget key={index} data={data} /> )}

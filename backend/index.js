@@ -9,7 +9,6 @@ const products = require("./data/products");
 const { OAuth2Client } = require("google-auth-library");
 const users = require("./routes/users")
 const orders = require("./routes/orders");
-const productsController = require('./controllers/productsController');
 
 
 
@@ -32,7 +31,6 @@ app.use("/api/products", productsRoute);
 app.use("/api/users", users);
 app.use("/api/orders", orders);
 app.use("/api/signup", OAuth2Client);
-app.use('/products', productsController);
 
 
 
